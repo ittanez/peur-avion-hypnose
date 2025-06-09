@@ -1,0 +1,52 @@
+VARIABLES D'ENVIRONNEMENT POUR NETLIFY
+=====================================
+
+Copiez-collez ces variables dans Netlify > Site settings > Environment variables :
+
+STRIPE_PUBLIC_KEY
+pk_live_51RCQyrANRwaqPj2NZIKGZiadw33A3msp4preGmKVLNV258KoGe0eadZL65pKs74NOA0TxnKdEY2KqshyYnBWeO9H00DIad5mNU
+
+STRIPE_SECRET_KEY
+sk_live_...NCJB
+
+STRIPE_PRICE_ID
+price_1RYA1AANRwaqPj2NTx2XYcAv
+
+SUPABASE_URL
+https://akrlyzmfszumibwgocae.supabase.co
+
+SUPABASE_ANON_KEY
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrcmx5em1mc3p1bWlid2dvY2FlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI3NjUyNDcsImV4cCI6MjA1ODM0MTI0N30.UDVk1wzm36OJGK0usCHEtvmkC2QxABvG9KQ8p2lKz30
+
+RESEND_API_KEY
+re_anumSe2y_Csxrtd458zqox5akebPT5mD4
+
+FROM_EMAIL
+contact@novahypnose.fr
+
+SITE_URL
+https://VOTRE-SITE.netlify.app
+
+⚠️  IMPORTANT : Remplacez VOTRE-SITE par l'URL que Netlify vous attribue !
+
+=====================================
+SQL POUR SUPABASE
+=====================================
+
+CREATE TABLE test_results (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL,
+  first_name TEXT NOT NULL,
+  total_score INTEGER NOT NULL,
+  percentage INTEGER NOT NULL,
+  fear_level TEXT NOT NULL,
+  recommendations TEXT NOT NULL,
+  answers JSONB NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+CREATE INDEX idx_test_results_email ON test_results(email);
+CREATE INDEX idx_test_results_created_at ON test_results(created_at);
+
+ALTER TABLE test_results ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Enable insert for service role" ON test_results FOR INSERT WITH CHECK (true);
