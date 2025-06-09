@@ -34,7 +34,7 @@ exports.handler = async (event, context) => {
 
     // Save to Supabase
     const { data: testResult, error: dbError } = await supabase
-      .from('test_results')
+      .from('peur_avion_test_results')
       .insert([
         {
           email: userInfo.email,
