@@ -2,6 +2,10 @@
 
 Site de vente optimisé pour un package d'hypnothérapie spécialisé dans la peur de l'avion.
 
+## ✅ MISE À JOUR AUTOMATIQUE
+**Dernière mise à jour :** 9 juin 2025 - 21h30
+**Statut :** Déploiement automatique GitHub → Netlify opérationnel !
+
 ## 🎯 Objectif
 
 Landing page avec test interactif + tunnel de vente + paiement Stripe intégré.
