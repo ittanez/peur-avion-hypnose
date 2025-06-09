@@ -1,0 +1,12 @@
+# API redirects
+/api/*  /.netlify/functions/:splat  200
+
+# Success page
+/success  /src/pages/success.html  200
+
+# Legal pages
+/mentions-legales  /src/pages/mentions-legales.html  200
+/confidentialite  /src/pages/confidentialite.html  200
+
+# SPA fallback
+/*  /index.html  200
