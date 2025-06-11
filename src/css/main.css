@@ -121,6 +121,14 @@ p {
     margin-top: 80px;
 }
 
+.hero-main-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
 .hero-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -237,8 +245,10 @@ p {
 }
 
 .problem-icon {
-    font-size: 3rem;
+    width: 80px;
+    height: 80px;
     margin-bottom: 1rem;
+    object-fit: contain;
 }
 
 .problem-card h3 {
@@ -287,6 +297,152 @@ p {
     justify-content: center;
     font-size: 14px;
     font-weight: bold;
+}
+
+/* Understanding Fear Section */
+.understanding-fear {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.content-wrapper h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.fear-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.fear-text h3 {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.causes-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.causes-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.statistics-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.hublot-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.security-plane-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.statistics-box h3 {
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.stat-desc {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Comparison Section */
+.comparison-section {
+    margin: 3rem 0;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.method-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.method-card.highlight {
+    border-color: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.method-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.method-card h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: inherit;
+}
+
+.pros-cons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.pros {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.cons {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.method-card.highlight .pros,
+.method-card.highlight .cons {
+    color: white;
 }
 
 /* Test Section */
@@ -384,15 +540,51 @@ p {
     color: #666;
 }
 
+/* Question Group Styles */
+.question-group {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.group-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f1f3f4;
+}
+
+.group-title {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.group-subtitle {
+    font-size: 1.125rem;
+    color: #666;
+    margin: 0;
+}
+
 /* Question Styles */
 .question {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.question:hover {
+    border-color: #e9ecef;
+    background: #f5f7fa;
 }
 
 .question h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 1.5rem;
     color: #333;
+    text-align: center;
 }
 
 .answers {
@@ -401,23 +593,29 @@ p {
 }
 
 .answer {
-    background: #f8f9fa;
-    border: 2px solid transparent;
+    background: white;
+    border: 2px solid #e9ecef;
     padding: 1rem 1.5rem;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 500;
 }
 
 .answer:hover {
     border-color: #667eea;
     background: #f0f4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
 .answer.selected {
     border-color: #667eea;
     background: #667eea;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
 
 .question-nav {
@@ -536,7 +734,17 @@ p {
 }
 
 .item-icon {
-    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.item-icon-img {
+    width: 80px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
     flex-shrink: 0;
 }
 
@@ -603,10 +811,31 @@ p {
     background: #f8f9fa;
 }
 
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonial-hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.testimonials-subtitle {
+    font-size: 1.125rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
 .testimonials h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: #333;
 }
 
@@ -714,6 +943,27 @@ p {
     margin-bottom: 2rem;
 }
 
+.footer-brand {
+    text-align: center;
+}
+
+.practitioner-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 4px solid #667eea;
+}
+
+.credentials {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
 .footer-brand h3 {
     color: #667eea;
     margin-bottom: 1rem;
@@ -785,6 +1035,21 @@ p {
     .test-features {
         flex-direction: column;
         gap: 1.5rem;
+    }
+    
+    /* Understanding Fear Mobile */
+    .fear-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .statistics-box {
+        order: -1;
     }
     
     .testimonials-grid {
